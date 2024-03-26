@@ -9,6 +9,7 @@ import Pagestoread from './Components/Home/Pagestoread/Pagestoread.jsx'
 import Banner from './Components/Banner/Banner.jsx'
 import Bookdetail from './Components/Bookdetaqils/Bookdetail.jsx'
 
+
 const router = createBrowserRouter(
   [
     {
@@ -31,7 +32,8 @@ element:<ListedBook></ListedBook>
           path:'/book/:bookId',
           element:<Bookdetail></Bookdetail>,
           loader:()=>fetch('./Books.json')
-        }
+        },
+      
       ]
     }
   ]

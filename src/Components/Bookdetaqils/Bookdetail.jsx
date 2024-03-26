@@ -1,5 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveReadbooks } from "../../Utility/localstorage";
+
 
 const Bookdetail = () => {
     const books=useLoaderData();
@@ -9,6 +13,18 @@ const Bookdetail = () => {
 
     const{bookName,author,image,rating,category,tags,review,totalPages,publisher,yearOfPublishing}=book;
 console.log(books,book);
+
+const handleReadBook=()=>{
+  
+    toast('Books Added to Read list!');
+    saveReadbooks(ids);
+}
+
+// 
+const handleWishBook=()=>{
+    toast('Books Added to Wishlist!')
+}
+// 
     return (
         <div className="lg:flex gap-4">
          
@@ -35,10 +51,11 @@ console.log(books,book);
         <div  className="flex text-left"><p>Rating:</p> <p className="text-left font-bold">{rating}</p></div>
     </div>
         <div className="card-actions  mt-2">
-      <button className="btn px-6 text-xl">Read</button>
-      <button className="btn px-6 text-xl bg-[#50B1C9] text-white">Wishlist</button>
+      <button onClick={handleReadBook} className="btn px-6 text-xl">Read</button>
+      <button onClick={handleWishBook} className="btn px-6 text-xl bg-[#50B1C9] text-white">Wishlist</button>
     </div>
   </div>
+  <ToastContainer />
 </div>
         
     );
