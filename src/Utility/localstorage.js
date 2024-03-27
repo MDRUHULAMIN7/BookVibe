@@ -4,22 +4,22 @@ const getStoredreadBooks=()=>{
  const storeReadBook=localStorage.getItem('read-books');
 
  if(storeReadBook){
-    return JSON.stringify(storeReadBook);
+    return JSON.parse(storeReadBook);
  }
  return [];
 }
 
 const saveReadbooks=id=>{
 
-const StoredreadBooks =getStoredreadBooks();
+const storedreadBooks =getStoredreadBooks();
+console.log(storedreadBooks);
+const exists = storedreadBooks.find(bookid => bookid === id);
 
-const exists =StoredreadBooks.find(bookid => 
-     bookid === id);
-
-    if(! exists){
-        StoredreadBooks.push(id);
+    if(!exists){
+        storedreadBooks.push(id);
+        console.log(storedreadBooks);
         localStorage.setItem('read-books',
-        JSON.stringify(StoredreadBooks))
+        JSON.stringify(storedreadBooks))
     }
     console.log(id);
 }

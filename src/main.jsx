@@ -8,14 +8,18 @@ import ListedBook from './Components/Home/ListedBook/ListedBook.jsx'
 import Pagestoread from './Components/Home/Pagestoread/Pagestoread.jsx'
 import Banner from './Components/Banner/Banner.jsx'
 import Bookdetail from './Components/Bookdetaqils/Bookdetail.jsx'
+import Error from './Components/Error/Error.jsx'
+
+
 
 
 const router = createBrowserRouter(
   [
+    
     {
       path:'/',
       element:<Home></Home>,
-     
+     errorElement:<Error></Error>,
       children:[
         {
 path:'/listedbooks',
@@ -33,6 +37,7 @@ element:<ListedBook></ListedBook>
           element:<Bookdetail></Bookdetail>,
           loader:()=>fetch('./Books.json')
         },
+       
       
       ]
     }
