@@ -7,6 +7,7 @@ import { getStoredreadBooks2 } from "../../Utility/localstorage2";
 import {Link} from"react-router-dom";
 
 
+
 const Wishlist = () => {
     const [books2,setbooks2]=useState([]);
     const [wishbook,setWishbook]=useState([])
@@ -19,16 +20,27 @@ console.log(wishbook);
 
     useEffect(()=>{
         const storedbookid = getStoredreadBooks2();
-        if(books2.length>0){
-            const bookwish=[];
-            for(const id of storedbookid){
-                const book2 = books2.find(book2=>book2.bookId===id);
-                if(book2){
-                    bookwish.push(book2);
+ 
+  
+           
+               
+                    if(books2.length>0){
+                        const bookwish=[];
+                        for(const id of storedbookid){
+                            const book2 = books2.find(book2=>book2.bookId===id);
+                            if(book2){
+                                bookwish.push(book2);
+                            
+                            }
+                        }
+                        setWishbook(bookwish)
                 }
-            }
-            setWishbook(bookwish)
-        }
+              
+            
+        
+        
+            
+        
     },[books2]);
     return (
     
@@ -75,7 +87,7 @@ console.log(wishbook);
                  
                 </div>
 
-{/*  */}
+
      </div>
 )};
 

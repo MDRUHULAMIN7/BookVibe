@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 
 
 const getStoredreadBooks=()=>{
@@ -20,7 +21,13 @@ const exists = storedreadBooks.find(bookid => bookid === id);
         console.log(storedreadBooks);
         localStorage.setItem('read-books',
         JSON.stringify(storedreadBooks))
+toast.success('book added ReadBooks')
     }
+    else{
+        toast.warning("this book already added to ReadBooks")
+    
+    }
+  
     console.log(id);
 }
 

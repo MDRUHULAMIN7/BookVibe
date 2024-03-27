@@ -1,5 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -10,6 +12,7 @@ const Home = () => {
 
            <Navbar></Navbar>
            <Outlet></Outlet>
+           <ToastContainer />
         </div>
     );
 };
