@@ -41,7 +41,7 @@ const Pagestoread = () => {
 
     const [data2,setdata]=useState([]);
     const[chartdata,setChartdata]=useState([]);
-
+console.log(chartdata);
 useEffect(()=>{
         fetch('Books.json')
         .then(res=> res.json())
@@ -68,14 +68,22 @@ useEffect(()=>{
 
     },[data2])
 
-
+const bardata = chartdata.map(item=>{
+    const i={
+        name:item.bookName,
+        uv:item.totalPages
+    }
+    return i
+})
 
 
     return (
-        <BarChart
+       <div className='my-10'>
+         <BarChart
+     
         width={500}
         height={300}
-        data={data}
+        data={bardata}
         margin={{
           top: 20,
           right: 30,
@@ -92,6 +100,7 @@ useEffect(()=>{
           ))}
         </Bar>
       </BarChart>
+       </div>
     
     );
 };
