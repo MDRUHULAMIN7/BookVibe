@@ -5,6 +5,7 @@ import pic1 from "../../../public/images/location.png"
 import pic2 from "../../../public/images/pub.png"
 import pic3 from "../../../public/images/Frame.png"
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -41,7 +42,7 @@ const Readbooks = () => {
         <div>
             <h1 className="text-4xl text-green-500 font-bold text-center my-4">Read Books:{readbook.length}</h1>
 
-            
+            <Helmet><title>BookReviews | ReadBooks</title></Helmet>
                 <div>
                     {
    readbook.map(readlistbook=><div className="m-5" key={readlistbook.id}>
