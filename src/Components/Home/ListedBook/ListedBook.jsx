@@ -2,11 +2,13 @@
 import { createContext } from "react";
 import Readbooks from "../../Readbooks/Readbooks";
 import Wishlist from "../../Wishlistbooks/Wishlist";
+import { Helmet } from "react-helmet-async";
 
 export const AssetContext=createContext('diamond');
 const ListedBook = () => {
     return (
         <div>
+          <Helmet><title>BookReviews | ListedBooks</title></Helmet>
             <h1 className="m-4 bg-base-300 text-center text-3xl rounded-xl text-black font-bold py-10">Books</h1>
          
          <div className="mb-24 mt-10 flex items-center justify-center"><details className="dropdown">

@@ -4,6 +4,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import { saveReadbooks } from "../../Utility/localstorage";
 import { saveReadbooks2 } from "../../Utility/localstorage2";
+import { Helmet } from "react-helmet-async";
 
 
 const Bookdetail = () => {
@@ -29,9 +30,13 @@ const handleWishBook=()=>{
 }
 // 
     return (
+      
         <div className="lg:flex gap-4">
-         
+         <Helmet><title>BookDetails :{bookId}</title></Helmet>
+      
             <div className="card  bg-base-100 shadow-xl w-1/2 h-[700px]">
+
+              
   <figure><img className="  h-[670px]" src={image}alt="Shoes" /></figure>
   </div>
   <div className="card-body ">
