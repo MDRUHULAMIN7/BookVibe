@@ -5,6 +5,7 @@ import pic5 from '../../../public/images/pub.png'
 import pic6 from '../../../public/images/Frame.png'
 import { getStoredreadBooks2 } from "../../Utility/localstorage2";
 import {Link} from"react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -58,6 +59,7 @@ console.log(wishbook);
   
     <div className="bg-base-300 p-10 rounded-xl m-4">
     <img src={wishbook.image}alt="Shoes" />
+    <Helmet><title>BookReviews | Wishlist</title></Helmet>
     </div>
   <div className="space-y-2 m-4">
     <h2 className="card-title text-3xl font-bold">{wishbook.bookName}</h2>
