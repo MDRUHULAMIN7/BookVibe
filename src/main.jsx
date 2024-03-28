@@ -10,6 +10,7 @@ import Banner from './Components/Banner/Banner.jsx'
 import Bookdetail from './Components/Bookdetaqils/Bookdetail.jsx'
 import Error from './Components/Error/Error.jsx'
 import NewBooks from './Components/NewBooks/NewBooks.jsx'
+import { HelmetProvider } from 'react-helmet-async'
 
 
 
@@ -51,6 +52,9 @@ element:<ListedBook></ListedBook>
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+   <HelmetProvider>
    <RouterProvider router={router}></RouterProvider>
+   </HelmetProvider>
+  
   </React.StrictMode>,
 )
