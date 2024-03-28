@@ -80,16 +80,16 @@ const bardata = chartdata.map(item=>{
     return (
        <div className='my-10'>
          <BarChart
-     
+     className='w-screen'
         width={500}
         height={300}
         data={bardata}
         margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />

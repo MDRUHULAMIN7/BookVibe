@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import {   useEffect, useState } from "react";
 import { getStoredreadBooks } from "../../Utility/localstorage";
 
 import pic1 from "../../../public/images/location.png"
 import pic2 from "../../../public/images/pub.png"
 import pic3 from "../../../public/images/Frame.png"
 import { Link } from "react-router-dom";
+
+
+
 const Readbooks = () => {
+
 
     const [books,setbooks]=useState([]);
     const[readbook,setReadbook]=useState([]);
@@ -26,18 +30,12 @@ const Readbooks = () => {
             for(const id of storedbookid){
                 const book =books.find(book=> book.bookId === id);
                 if(book){
-                    bookread.push(book);
-                  
-                }
-              
-               
-            }
+                    bookread.push(book);                 
+                } }
            
             setReadbook(bookread)
-        }
+        }},[books])
 
-       
-    },[books])
   
     return (
         <div>
@@ -57,15 +55,15 @@ const Readbooks = () => {
   <div className="space-y-2 m-4">
     <h2 className="card-title text-3xl font-bold">{readlistbook.bookName}</h2>
     <p className="text-xl">By:{readlistbook.author}</p>
-    <div className="flex text-xl gap-5">
+    <div className="lg:flex text-xl gap-5">
         <p className="font-bold">Tag</p>
         <p  className="text-green-500 font-semibold rounded-xl">#{readlistbook.tags[0]}</p>
         <p className="text-green-500 font-semibold rounded-xl">#{readlistbook.tags[1]}</p>
         <h1 className="flex gap-3"><img src={pic1} alt="" />Year of Publishing : {readlistbook.yearOfPublishing}</h1>
     </div>
     <div className="flex gap-3 text-xl my-3">
-        <p className="flex gap-3"><img src={pic2} alt="" />Publisher : {readlistbook.publisher}</p> 
-        <p className="flex gap-3"><img src={pic3} alt="" />Pages : {readlistbook.totalPages}</p>
+        <p className="flex gap-3"><img className="w-10 h-10" src={pic2} alt="" />Publisher : {readlistbook.publisher}</p> 
+        <p className="flex gap-3"><img className="w-10 h-10" src={pic3} alt="" />Pages : {readlistbook.totalPages}</p>
       
         </div>
         <hr />

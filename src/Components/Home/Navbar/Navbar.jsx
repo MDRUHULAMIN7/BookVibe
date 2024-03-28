@@ -27,6 +27,9 @@ const Navbar = () => {
             <NavLink  to='/pagestoread' className={({isActive,isPending})=>
           isPending?'text-black':isActive?'text-green-500 border-2 border-green-500 rounded-xl px-3 py-2':''}>Pages to Read</NavLink>
    
+            <NavLink  to='/newbooks' className={({isActive,isPending})=>
+          isPending?'text-black':isActive?'text-green-500 border-2 border-green-500 rounded-xl px-3 py-2':''}>NewBooks</NavLink>
+   
             
           </ul>
         </div>

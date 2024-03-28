@@ -9,6 +9,7 @@ import Pagestoread from './Components/Home/Pagestoread/Pagestoread.jsx'
 import Banner from './Components/Banner/Banner.jsx'
 import Bookdetail from './Components/Bookdetaqils/Bookdetail.jsx'
 import Error from './Components/Error/Error.jsx'
+import NewBooks from './Components/NewBooks/NewBooks.jsx'
 
 
 
@@ -37,7 +38,10 @@ element:<ListedBook></ListedBook>
           element:<Bookdetail></Bookdetail>,
           loader:()=>fetch('./Books.json')
         },
-       
+       {
+        path:'/newbooks',
+        element:<NewBooks></NewBooks>
+       }
       
       ]
     }

@@ -62,15 +62,15 @@ console.log(wishbook);
   <div className="space-y-2 m-4">
     <h2 className="card-title text-3xl font-bold">{wishbook.bookName}</h2>
     <p className="text-xl">By:{wishbook.author}</p>
-    <div className="flex text-xl gap-5">
+    <div className="lg:flex text-xl gap-5">
         <p className="font-bold">Tag</p>
         <p  className="text-green-500 font-semibold rounded-xl">#{wishbook.tags[0]}</p>
         <p className="text-green-500 font-semibold rounded-xl">#{wishbook.tags[1]}</p>
         <h1 className="flex gap-3"><img src={pic4} alt="" />Year of Publishing : {wishbook.yearOfPublishing}</h1>
     </div>
     <div className="flex gap-3 text-xl">
-        <p className="flex gap-3"><img src={pic5} alt="" />Publisher : {wishbook.publisher}</p> 
-        <p className="flex gap-3"><img src={pic6} alt="" />Pages : {wishbook.totalPages}</p>
+        <p className="flex gap-3"><img className="w-10 h-10" src={pic5} alt="" />Publisher : {wishbook.publisher}</p> 
+        <p className="flex gap-3"><img className="w-10 h-10" src={pic6} alt="" />Pages : {wishbook.totalPages}</p>
         </div>
 
         <hr />
